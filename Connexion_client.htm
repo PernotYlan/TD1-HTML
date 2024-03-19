@@ -3,68 +3,18 @@
     <head>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
         <meta charset="UTF-8" >
-		<title>Mon formulaire</title>
-		<style>
-			table, th, td {
-				border: 3px solid black;
-				width: 400px;
-			}
-		</style>
+		<title>Connexion Client</title>
 	</head>
 	<body>
-		<h1> Cascading Style Sheets </h1>
-		<h2> Le premier titre 2 </h2>
-		<h2> Le deuxième titre 2 </h2>
-		<h2 style="font-family:Comic sans MS;color:blue;"> Le troisième titre 2 </h2>
-		<h1> Le formulaire </h1><br>
+		<h1> Connexion Client </h1>
+		<h2 style="font-family:Comic sans MS;color:blue;" align="center"> Connexion </h2> <br/>
 		
-		<form action="mon_formulaire.htm" method="get" id="monFormulaire">
-			<table>
-				<tr>
-					<th>Civilité :</th>
-					<td>
-						<input type="radio" name="civ" value="0" checked>Mr
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="civ" value="1" >Mme
-					</td>
-				</tr>
-				<tr>
-					<th>Nom :</th>
-					<td><input type="text" name="Nom" placeholder="Nom" size="28" maxlength="30" ></td>
-				</tr>
-				<tr>
-					<th>Prénom :</th>
-					<td><input type="text" name="Prenom" placeholder="Prenom" size="28" maxlength="30" ></td>
-				</tr>
-				<tr>
-					<th>Adresse :</th>
-					<td><input type="text" name="adresse1" placeholder="Adresse 1" size="28" maxlength="40" ></td>
-				</tr>
-				<tr>
-					<th></th>
-					<td><input type="text" name="adresse2" placeholder="Adresse 2" size="28" maxlength="40" ></td>
-				</tr>
-				<tr>
-					<th>Code Postal :</th>
-					<td><input type="text" name="cp" size="28" maxlength="5" ></td>
-				</tr>
-				<tr>
-					<th>Ville :</th>
-					<td><input type="text" name="ville" placeholder="Ville" size="28" maxlength="30" ></td>
-				</tr>
-				<tr>
-					<th>Département :</th>
-					<td>
-						<select name="dep" size="1" >
-							<option value="0" selected>Choisir</option>
-							<option value="31">Haute-Garonne</option>
-							<option value="09">Ariège</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="submit" value="Envoyer" ></td>
-				</tr>
-			</table>
+		<form action="test" method="post" id="Connexion_client" align="center">
+			<label><strong>Adresse Mail :</strong></label> <input type="email" name="name_Mail" id="Mail" placeholder="monsiteestcool@gmail.fr">
+			<br/> <br/>
+			<label><strong>Mot de passe :</strong></label> <input type="password" name="name_Mdp" id="Mdp" placeholder="Azerty12345!$">
+			<br/><br/>
+			<button type="submite"><strong>Valider Ma Connexion</strong></button>
 		</form>
 	</body>
 </html>
