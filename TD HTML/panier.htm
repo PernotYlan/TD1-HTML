@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage du Panier</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        /* Styles du panier */
+        .panier {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .produit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .produit img {
+            max-width: 80px;
+            margin-right: 20px;
+        }
+        .produit-info {
+            flex-grow: 1;
+        }
+        .produit-nom {
+            font-weight: bold;
+            color: #333;
+        }
+        .produit-prix {
+            font-size: 18px;
+            color: #555;
+        }
+        .total {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .total-prix {
+            font-weight: bold;
+            color: #333;
+        }
+        .message-validation {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+        .panier-vide {
+            text-align: center;
+            display: none;
+            color: #333;
+        }
+        button {
+            margin-left: auto;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Affichage du Panier</h1>
+
+    <!-- Panier Plein -->
+    <section class="panier">
+        <h2>Panier</h2>
+
+        <div class="produit">
+            <img src="image1.jpg" alt="Produit 1">
+            <div class="produit-info">
+                <p class="produit-nom">Ordinateur Portable</p>
+                <p class="produit-prix">999€</p>
+            </div>
+            <button class="retirer">Retirer</button>
+        </div>
+
+        <div class="produit">
+            <img src="image2.jpg" alt="Produit 2">
+            <div class="produit-info">
+                <p class="produit-nom">Souris Ordinateur</p>
+                <p class="produit-prix">14€</p>
+            </div>
+            <button class="retirer">Retirer</button>
+        </div>
+
+        <div class="total">
+            <p>Total : <span class="total-prix">1013€</span></p>
+            <button class="valider">Valider le Panier</button>
+        </div>
+        <div class="message-validation"></div>
+    </section>
+
+    <!-- Message Panier Vide -->
+    <p id="panier-vide" class="panier-vide">Le panier est actuellement vide.</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const produits = document.querySelectorAll('.produit');
+            const totalPrix = document.querySelector('.total-prix');
+            const messageValidation = document.querySelector('.message-validation');
+            const panierVide = document.getElementById('panier-vide');
+
+            // Calcul du total du panier
+            let total = 0;
+            produits.forEach(produit => {
+                const prix = parseFloat(produit.querySelector('.produit-prix').textContent.replace('€', ''));
+                total += prix;
+            });
+            totalPrix.textContent = total.toFixed(2) + '€';
+
+            // Afficher un message si le panier est vide
+            if (total === 0) {
+                panierVide.style.display = 'block';
+            }
+
+            // Gestion du bouton Retirer
+            const boutonsRetirer = document.querySelectorAll('.retirer');
+            boutonsRetirer.forEach((bouton, index) => {
+                bouton.addEventListener('click', function() {
+                    produits[index].remove();
+                    // Recalcul du total du panier
+                    total -= parseFloat(produits[index].querySelector('.produit-prix').textContent.replace('€', ''));
+                    totalPrix.textContent = total.toFixed(2) + '€';
+                    // Vérifier si le panier est vide après la suppression
+                    if (total === 0) {
+                        panierVide.style.display = 'block';
+                    }
+                });
+            });
+
+            // Gestion du bouton Valider le Panier
+            const boutonValider = document.querySelector('.valider');
+            boutonValider.addEventListener('click', function() {
+                messageValidation.textContent = 'Vous avez bien validé votre panier.';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue chez STS_CIEL_IR</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Réinitialisation des styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Bannière */
+        #banniere {
+            background-image: url('banniere.jpg');
+            background-size: cover;
+            color: Black;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        #banniere h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        #banniere p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        /* Bouton */
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #555;
+            border-color: #fff;
+        }
+
+        /* Section Produits */
+        #produits {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .colonne-produits {
+            display: inline-block;
+            vertical-align: top;
+            width: calc(50% - 40px); /* Ajustement de la largeur */
+            margin: 0 20px 40px; /* Espacement entre les colonnes */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .colonne-produits:hover {
+            transform: translateY(-5px); /* Animation au survol */
+        }
+
+        .colonne-produits img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .colonne-produits h3 {
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        .prix {
+            display: block;
+            padding: 10px;
+            font-size: 1.1em;
+            background-color: #f2f2f2;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        /* Section Connexion */
+        #connexion {
+            background-color: #f2f2f2;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #connexion form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #connexion input[type="text"],
+        #connexion input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        #connexion input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #connexion input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Section Contact */
+        #contact {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #contact a {
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        #contact a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bienvenue chez <span style="font-family: 'Arial Black', sans-serif;">STS_CIEL_IR</span></h1>
+</header>
+
+<section id="banniere">
+    <h1>Découvrez nos offres exclusives !</h1>
+    <p>Des produits informatiques de qualité pour tous vos besoins.</p>
+    <a href="liste_produits.htm" class="btn">Voir nos produits</a>
+</section>
+
+    <section id="connexion">
+    <div class="banner">
+		<h2>Connexion</h2>
+        <p>Connectez-vous pour accéder à votre compte.</p>
+        <form action="liste_produits.htm" method="post">
+            <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <input type="submit" value="Connexion">
+			<a href="creation_clients.htm" class="btn" align="center">Inscription</a>
+        </form>
+    </div>
+	</section>
+	
+	
+
+
+<section id="produits">
+    <h2>Nos Produits</h2>
+    <div class="colonne-produits">
+        <img src="image1.jpg" alt="Ordinateur Portable">
+        <h3>Ordinateur Portable</h3>
+        <span class="prix">999€</span>
+    </div>
+	
+	    <section id="contact">
+        <h2>Contact</h2>
+		<p><a href="contact.htm">Accéder au formulaire de contact</a></p>
+    </section>
+	<nav>
+    <ul style="list-style-type: none; padding: 0; text-align: center;">
+        <li style="display: inline; margin-right: 10px;"><a href="index.html" style="color: #333; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px;">Accueil</a></li>
+        <li style="display: inline; margin-right: 10px;"><a href="liste_produits.htm" style="color: #333; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px;">Nos Produits</a></li>
+        <li style="display: inline; margin-right: 10px;"><a href="detail_produits.htm" style="color: #333; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px;">Nos Produits détaillés</a></li>
+        <li style="display: inline; margin-right: 10px;"><a href="connexion.htm" style="color: #333; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px;">Connexion</a></li>
+        <li style="display: inline; margin-right: 10px;"><a href="creation_clients.htm" style="color: #333; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px;">Inscription</a></li>
+        <li style="display: inline; margin-right: 10px;"><a href="modification_client.htm" style="color: #333; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px;">Modifications</a></li>
+        <li style="display: inline; margin-right: 10px;"><a href="panier.htm" style="color: #333; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px;">Panier</a></li>
+        <li style="display: inline;"><a href="contact.htm" style="color: #333; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px;">Contact</a></li>
+    </ul>
+</nav>
+</body>
